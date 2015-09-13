@@ -1,12 +1,14 @@
 # Sync
-Small library that allow synchronize code execution at different tabs.
+
+Small library that allows synchronizing code execution at different tabs.
 
 # Implementation:
- 
-`localStorage` are always synchronize between tabs. Object save at local storage data need understand should one do new action or load data from local data. That allow synchronise implimentation special function at different tabs. 
- 
-For that it creates unique identity for every tabs. Save at localStorage data about first open tab and every next tab should read data from localStorage. If the first tab is closed next open tab start generates request and other tab load data from local storage and etc.
+
+ The Sync object saves the data at `localStorage`, which is necessary for understanding if a new action should be done or data from `localStorage` should be loaded. `localStorage`  is always synchronized between tabs. That allow synchronizing implementation of a special function at different tabs.
+
+For this purpose, the object creates a unique identifier for every tab. The first open tab saves the data about itself at `localStorage`, and every next tab reads data from `localStorage`. If the first tab is closed, the next open tab starts to generate requests and other tabs read data from `localStorage`, etc.
+
 
 # Examples
 
-1. Synchronize video playing. Run play video at one tab stop playing at all other open tabs. Based on video-js.
+ Synchronize video playing. Open two tabs. Video playing at one tab stops video playing at second open tab. Based on video-js.
