@@ -10,7 +10,7 @@
  */
 
 // todo add check is localstorage available if not run current action
-var SyncObject = {
+var SynchObject = {
 
     /**
      * Unique identity of current page
@@ -54,13 +54,9 @@ var SyncObject = {
     act: function (obj) {
         this.init(obj.jobName);
         if (this.isTabActive(obj.jobName)) {
-            if (typeof obj.activeFunction === 'function') {
-                obj.activeFunction();
-            }
+            obj.activeFunction();
         } else {
-            if (typeof obj.passiveFunction === 'function') {
-                obj.passiveFunction();
-            }
+            obj.passiveFunction();
         }
 
         this.timeLastTick = this.timeCurrentTick;
@@ -81,7 +77,7 @@ var SyncObject = {
      *
      * @param jobName
      */
-    tick: function (jobName) {
+    tik: function (jobName) {
         var activeTab = JSON.parse(localStorage.getItem("syncObject_" + jobName));
         if (!activeTab
             || (activeTab.lastTick < (Date.now() - 2 * this.delayBetweenTick))
@@ -91,7 +87,7 @@ var SyncObject = {
         var self = this;
         setTimeout(
             function () {
-                self.tick(jobName)
+                self.tik(jobName)
             },
             this.delayBetweenTick
         );
@@ -106,7 +102,7 @@ var SyncObject = {
         }
         if (this.activeJobs.indexOf(jobName) === -1) {
             this.activeJobs.push(jobName);
-            this.tick(jobName);
+            this.tik(jobName);
         }
     }
 };
