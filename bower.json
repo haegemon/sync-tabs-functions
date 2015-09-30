@@ -1,0 +1,8 @@
+{
+  "name": "haegemon/sync-tabs-functions",
+  "version": "1.0",
+  "main": "sync.object.js",
+  "ignore": [
+    ".gitignore"
+  ]
+}
