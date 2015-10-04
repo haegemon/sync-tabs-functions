@@ -11,4 +11,4 @@ For this purpose, the object creates a unique identifier for every tab. The firs
 
 # Examples
 
- Synchronize video playing. Open two tabs. Video playing at one tab stops video playing at second open tab. Based on video-js.
+ Synchronize video playing. Open example/video-player/common.html. Starting playing one video stop other one.
