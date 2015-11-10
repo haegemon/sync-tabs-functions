@@ -10,7 +10,7 @@ For this purpose, the object creates a unique identifier for every tab. The firs
 
 # Basic usage:
 
-Simple synchronizing activity between two tabs. Creation of two function: one for active job and the other for passive job.
+Simple synchronizing activity between two tabs. Creation of two functions: one for active work and the other for passive work.
 
 ```
 
@@ -45,7 +45,7 @@ Example : Synchronize video playing. Open example/video-player/common.html.  Sta
 
 It is possible to prioritise the current action before others. This might be useful in situations, when actions are not equal (for example, different pages or active and background pages).
 
-If job with max priority is active, script does not change active job. If job with max priority is passive, script does not set any job active. Only jobs with lower priority are changed to jobs with higher priority
+If action with max priority is active, script does not change active action. If action with max priority is passive, script does not set any action active. Only actions with lower priority are changed to actions with higher priority
 
 ```
 
@@ -65,7 +65,7 @@ function passive() {
    console.log(‘I am passive)   ;
 }
 
-// At any task set priority of job
+// At any task set priority of action
 setInterval(function () {
    SyncObject.act(
            {
